@@ -1,0 +1,11 @@
+---
+- name: make prod image tomcat
+  hosts: docker
+  become: yes
+
+  tasks:
+    - name: build new image
+      docker_image:
+
+
+...
