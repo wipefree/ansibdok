@@ -16,4 +16,5 @@
         name: 'build_stand'
         image: 'kaabert/maven-with-git:corretto-8'
         state: started
+        #auto_remove: true
 ...
