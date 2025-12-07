@@ -1,0 +1,13 @@
+---
+- name: run build container
+  hosts: docker
+  become: yes
+
+  tasks:
+    - name: add needed software
+      apt:
+        name:
+          docker.io
+        update_cache: yes
+        state: present
+...
