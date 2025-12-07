@@ -10,7 +10,9 @@
         image: 'tomcat:9.0' # /usr/local/tomcat/webapps
         #image: 'tomcat:9.0-jdk8-corretto' # /usr/local/tomcat/webapps
         state: started
-        command: tail -f /dev/null
+        command: |
+          - /usr/local/tomcat/bin/startup.sh
+          - tail -f /dev/null
         detach: yes
         ports: '8080:8080'
 
@@ -19,7 +21,7 @@
 #        name: tomcat-juli
 #        state: started
 
-#    - name: put WAR from local to container
-#      shell:
-#        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps
+    - name: put WAR from local to container
+      shell:
+        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps
 ...
