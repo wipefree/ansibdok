@@ -12,8 +12,12 @@
         command: tail -f /dev/null
         detach: yes
 
-    - name: ensure tomcat service is started
-      service:
-        name: tomcat-juli
-        state: started
+#    - name: ensure tomcat service is started
+#      service:
+#        name: tomcat-juli
+#        state: started
+
+    - name: put WAR from local to container
+      shell:
+        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps
 ...
