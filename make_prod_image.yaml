@@ -11,6 +11,7 @@
         state: started
         command: tail -f /dev/null
         detach: yes
+        ports: '8080:8080'
 
 #    - name: ensure tomcat service is started
 #      service:
