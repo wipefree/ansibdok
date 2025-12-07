@@ -22,7 +22,8 @@
         name: 'build_stand'
         image: 'kaabert/maven-with-git:corretto-8'
         state: started
-        command: sleep infinity
+        command: tail -f /dev/null
+        #command: sleep infinity
         detach: yes
         #auto_remove: true
 ...
