@@ -14,6 +14,6 @@
 
     - name: ensure tomcat service is started
       service:
-        name: tomcat.noarch
+        name: tomcat-juli
         state: started
 ...
