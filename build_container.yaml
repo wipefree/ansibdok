@@ -28,7 +28,8 @@
         #auto_remove: true
 
     - name: get project from GIT
-      shell: docker exec build_stand mkdir /tmp/test_new
+      shell: |
+        git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/
 ...
 
 # 1. при запуске ошибка
