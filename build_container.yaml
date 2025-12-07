@@ -28,8 +28,9 @@
         #auto_remove: true
 
     - name: get project from GIT
-      shell:
+      shell: |
         docker exec build_stand git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/prj
+        docker exec build_stand cd /tmp/prj && mvn package -DskipTests
 ...
 
 # 1. при запуске ошибка
