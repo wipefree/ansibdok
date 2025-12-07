@@ -21,6 +21,6 @@
 
     - name: put WAR from local to container
       shell:
-        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps/
+        docker cp  /tmp/hello-1.0.war prod_stand:/webapps/
         #/usr/local/tomcat/webapps
 ...
