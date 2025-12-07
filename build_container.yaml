@@ -34,7 +34,7 @@
       shell:
         docker cp build_stand:/tmp/prj/target/hello-1.0.war /tmp/
 
-    - name: run detach container
+    - name: kill unneeded container
       docker_container:
         name: 'build_stand'
         state: absent
