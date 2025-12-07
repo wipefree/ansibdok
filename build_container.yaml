@@ -27,10 +27,13 @@
         detach: yes
         #auto_remove: true
 
-    - name: get project from GIT
+    - name: get project from GIT and bild WAR
       shell: |
         docker exec build_stand git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/prj
         docker exec -w /tmp/prj build_stand /usr/share/maven/bin/mvn package -DskipTests
+
+    - name: get WAR from container
+      shell:
         docker cp build_stand:/tmp/prj/target/hello-1.0.war /tmp
 ...
 
