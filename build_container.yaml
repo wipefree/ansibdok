@@ -29,8 +29,7 @@
 
     - name: get project from GIT
       shell:
-        pwd
-        git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/prj
+        docker exec build_stand git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/prj
 ...
 
 # 1. при запуске ошибка
