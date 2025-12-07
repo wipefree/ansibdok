@@ -29,7 +29,8 @@
 
     - name: get project from GIT
       shell: |
-        git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp
+        cd /tmp
+        git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 ...
 
 # 1. при запуске ошибка
