@@ -7,7 +7,7 @@
     - name: run detach container
       docker_container:
         name: 'prod_stand'
-        image: 'rapidfort/tomcat9-openjdk11-ib' #'tomcat:latest' # /usr/local/tomcat/webapps
+        image: 'tomcat10' # /usr/local/tomcat/webapps
         #image: 'tomcat:9.0-jdk8-corretto' # /usr/local/tomcat/webapps
         state: started
         command: tail -f /dev/null
@@ -19,8 +19,7 @@
 #        name: tomcat-juli
 #        state: started
 
-    - name: put WAR from local to container
-      shell:
-        docker cp  /tmp/hello-1.0.war prod_stand:/webapps/
-        #/usr/local/tomcat/webapps
+#    - name: put WAR from local to container
+#      shell:
+#        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps
 ...
