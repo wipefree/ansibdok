@@ -22,7 +22,9 @@
         name: 'build_stand'
         image: 'kaabert/maven-with-git:corretto-8'
         state: started
-        #auto_remove: true
+        command: sleep infinity
+        detach: yes
+        auto_remove: true
 ...
 
 # 1. при запуске ошибка
