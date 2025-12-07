@@ -24,7 +24,7 @@
         state: started
         command: sleep infinity
         detach: yes
-        auto_remove: true
+        #auto_remove: true
 ...
 
 # 1. при запуске ошибка
