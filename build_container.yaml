@@ -7,9 +7,15 @@
     - name: add needed software
       apt:
         name:
-          docker.io
+          - docker.io
+          - python
+          - python-pip
         update_cache: yes
         state: present
+
+    - name: add model 'pip install docker-py'
+      command: pip install docker-py
+      state: present
 
     - name: run detach container
       docker_container:
@@ -18,3 +24,10 @@
         state: started
         #auto_remove: true
 ...
+
+# 1. при запуске ошибка
+# - "msg": "Failed to import docker-py - No module
+# named requests.exceptions. Try `pip install docker-py`"
+# (!) надо доустановить модуль docker-py
+# Чтобы проверить установку модуля в Python, используйте
+# pip show <имя_модуля>
