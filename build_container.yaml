@@ -23,9 +23,7 @@
         image: 'kaabert/maven-with-git:corretto-8'
         state: started
         command: tail -f /dev/null
-        #command: sleep infinity
         detach: yes
-        #auto_remove: true
 
     - name: get project from GIT and bild WAR
       shell: |
@@ -35,6 +33,11 @@
     - name: get WAR from container
       shell:
         docker cp build_stand:/tmp/prj/target/hello-1.0.war /tmp/
+
+    - name: run detach container
+      docker_container:
+        name: 'build_stand'
+        state: absent
 ...
 
 # 1. при запуске ошибка
@@ -43,3 +46,4 @@
 # (!) надо доустановить модуль docker-py
 # Чтобы проверить установку модуля в Python, используйте
 # pip show <имя_модуля>
+# (!) Обязательно установить apt install python-pip
