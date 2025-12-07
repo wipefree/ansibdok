@@ -34,7 +34,7 @@
 
     - name: get WAR from container
       shell:
-        docker cp build_stand:/tmp/prj/target/hello-1.0.war /tmp
+        docker cp build_stand:/tmp/prj/target/hello-1.0.war /tmp/
 ...
 
 # 1. при запуске ошибка
