@@ -31,6 +31,7 @@
       shell: |
         docker exec build_stand git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /tmp/prj
         docker exec -w /tmp/prj build_stand /usr/share/maven/bin/mvn package -DskipTests
+        docker cp build_stand:/tmp/prj/target/hello-1.0.war /tmp
 ...
 
 # 1. при запуске ошибка
