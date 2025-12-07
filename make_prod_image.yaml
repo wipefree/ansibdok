@@ -11,4 +11,9 @@
         state: started
         command: tail -f /dev/null
         detach: yes
+
+    - name: ensure tomcat service is started
+      service:
+        name: tomcat9
+        state: started
 ...
