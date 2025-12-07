@@ -26,6 +26,11 @@
         #command: sleep infinity
         detach: yes
         #auto_remove: true
+
+    - name: get project from GIT
+      docker_container:
+        name: 'build_stand'
+        command: mkdir /tmp/test
 ...
 
 # 1. при запуске ошибка
