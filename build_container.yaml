@@ -28,9 +28,7 @@
         #auto_remove: true
 
     - name: get project from GIT
-      docker_container:
-        name: 'build_stand'
-        command: mkdir /tmp/test
+      shell: 'docker exec build_stand cd /temp && mkdir test1'
 ...
 
 # 1. при запуске ошибка
