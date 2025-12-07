@@ -7,7 +7,8 @@
     - name: run detach container
       docker_container:
         name: 'prod_stand'
-        image: 'tomcat:9.0-jdk8-corretto' # /usr/local/tomcat/webapps
+        image: 'tomcat9' # /usr/local/tomcat/webapps
+        #image: 'tomcat:9.0-jdk8-corretto' # /usr/local/tomcat/webapps
         state: started
         command: tail -f /dev/null
         detach: yes
