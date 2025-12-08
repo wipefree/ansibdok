@@ -4,6 +4,15 @@
   become: yes
 
   tasks:
+    - name: add needed software
+      apt:
+        name:
+          - docker.io
+          - python
+          - python-pip
+        update_cache: yes
+        state: present
+
     - name: run detach container
       docker_container:
         name: 'prod_stand'
