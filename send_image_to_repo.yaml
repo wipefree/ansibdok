@@ -10,9 +10,9 @@
         password: 'VuesAdmin123#'
         email: 'wipefree@gmail.com'
 
-    - name: push image to registry (anresarm/tomcat_hello:latest)
+    - name: push image to registry (andresarm/tomcat_hello:latest)
       docker_image:
-        name: 'anresarm/tomcat_hello:latest'
+        name: 'andresarm/tomcat_hello:latest'
         #tag: 'latest'
         push: yes
 ...

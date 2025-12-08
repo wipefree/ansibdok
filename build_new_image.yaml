@@ -15,7 +15,7 @@
 
     - name: build new image
       docker_image:
-        name: 'anresarm/tomcat_hello'
+        name: 'andresarm/tomcat_hello'
         path: /tmp
         dockerfile: Dockerfile
         tag: 'latest'
