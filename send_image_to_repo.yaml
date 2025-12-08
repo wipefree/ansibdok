@@ -1,0 +1,11 @@
+---
+- name: make prod image tomcat
+  hosts: docker
+  become: yes
+
+  tasks:
+    - name: come in to docker registry
+      docker_login:
+        username: 'andresarm'
+        password: 'VuesAdmin123#'
+...
