@@ -6,9 +6,9 @@
   tasks:
     - name: come in to docker registry
       docker_login:
-        username: 'andresarm'
-        password: 'VuesAdmin123#'
-        email: 'wipefree@gmail.com'
+        username: '***'
+        password: '***'
+        email: '***'
 
     - name: push image to registry (andresarm/tomcat_hello:latest)
       docker_image:
