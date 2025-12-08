@@ -13,6 +13,10 @@
         update_cache: yes
         state: present
 
+    - name: add model 'pip install docker-py'
+      command: pip install docker-py
+      state: present
+
     - name: run detach container
       docker_container:
         name: 'prod_stand'
