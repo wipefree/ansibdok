@@ -1,0 +1,13 @@
+---
+- name: create building container for compile project to hello-1.0.war
+  import_playbook: build_container.yaml
+
+- name: building new image Tomcat with integration inside image hello-1.0.war
+  import_playbook: build_new_image.yaml
+
+- name: send mew image to Docker repository
+  import_playbook: send_image_to_repo.yaml
+
+- name: start production container from "Docker repository/new image"
+  import_playbook: start_prod.yaml
+...
