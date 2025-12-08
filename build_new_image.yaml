@@ -4,14 +4,18 @@
   become: yes
 
   tasks:
-    - name: build new image
-      docker_image:
-        name: 'anresarm/tomcat_hello'
-        path: /tmp/img
-        dockerfile:
+    - name: make Dockerfile for building new image
+      copy:
           content: |
             FROM tomcat:9.0
             COPY /tmp/hello-1.0.war /usr/local/tomcat/webapps
             CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+          dest: /tmp/Dockerfile
+
+    - name: build new image
+      docker_image:
+        name: 'anresarm/tomcat_hello'
+        path: /tmp
+        dockerfile: Dockerfile
         tag: 'latest'
 ...
