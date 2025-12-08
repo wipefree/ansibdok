@@ -1,0 +1,14 @@
+---
+- name: start prod from andresarm/tomcat_hello:latest
+  hosts: prod
+  become: yes
+
+  tasks:
+    - name: run detach container
+      docker_container:
+        name: 'prod_stand'
+        image: 'andresarm/tomcat_hello:latest'
+        ports: '8080:8080'
+        state: started
+        detach: yes
+...

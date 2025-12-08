@@ -1,27 +1,27 @@
----
-- name: make prod image tomcat
-  hosts: docker
-  become: yes
-
-  tasks:
-    - name: run detach container
-      docker_container:
-        name: 'prod_stand'
-        image: 'tomcat:9.0' # /usr/local/tomcat/webapps
-        #image: 'tomcat:9.0-jdk8-corretto' # /usr/local/tomcat/webapps
-        state: started
-        command: |
-          - /usr/local/tomcat/bin/startup.sh
-          - tail -f /dev/null
-        detach: yes
-        ports: '8080:8080'
-
-#    - name: ensure tomcat service is started
-#      service:
-#        name: tomcat-juli
+#---
+#- name: make prod image tomcat
+#  hosts: docker
+#  become: yes
+#
+#  tasks:
+#    - name: run detach container
+#      docker_container:
+#        name: 'prod_stand'
+#        image: 'tomcat:9.0' # /usr/local/tomcat/webapps
+#        #image: 'tomcat:9.0-jdk8-corretto' # /usr/local/tomcat/webapps
 #        state: started
-
-    - name: put WAR from local to container
-      shell:
-        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps
-...
+#        command: |
+#          - /usr/local/tomcat/bin/startup.sh
+#          - tail -f /dev/null
+#        detach: yes
+#        ports: '8080:8080'
+#
+##    - name: ensure tomcat service is started
+##      service:
+##        name: tomcat-juli
+##        state: started
+#
+#    - name: put WAR from local to container
+#      shell:
+#        docker cp  /tmp/hello-1.0.war prod_stand:/usr/local/tomcat/webapps
+#...
