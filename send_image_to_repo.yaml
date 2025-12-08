@@ -12,7 +12,7 @@
 
     - name: push image to registry (anresarm/tomcat_hello:latest)
       docker_image:
-        repository: 'anresarm/tomcat_hello'
-        tag: 'latest'
+        name: 'anresarm/tomcat_hello:latest'
+        #tag: 'latest'
         push: yes
 ...
