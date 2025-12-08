@@ -11,6 +11,7 @@
             COPY ./hello-1.0.war /usr/local/tomcat/webapps
             CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
           dest: /tmp/Dockerfile
+            # /tmp/hello-1.0.war не сработало, но (!)сработало ./hello-1.0.war
 
     - name: build new image
       docker_image:
