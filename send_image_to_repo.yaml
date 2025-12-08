@@ -8,4 +8,5 @@
       docker_login:
         username: 'andresarm'
         password: 'VuesAdmin123#'
+        email: 'wipefree@gmail.com'
 ...
