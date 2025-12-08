@@ -6,7 +6,8 @@
   tasks:
     - name: display debug info
       debug:
-        msg: "{{[ pwd ]}}"
+        msg:
+          command: pwd
 
     - name: make Dockerfile for building new image
       copy:
