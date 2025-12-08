@@ -4,6 +4,10 @@
   become: yes
 
   tasks:
+    - name: display debug info
+      debug:
+        msg: "{{[ pwd ]}}"
+
     - name: make Dockerfile for building new image
       copy:
           content: |
