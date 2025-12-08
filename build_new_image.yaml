@@ -19,4 +19,9 @@
         path: /tmp
         dockerfile: Dockerfile
         tag: 'latest'
+
+    - name: come in to docker registry
+      docker_login:
+        username: 'andresarm'
+        password: 'VuesAdmin123#'
 ...
